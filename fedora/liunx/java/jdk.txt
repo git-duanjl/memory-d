@@ -1,0 +1,12 @@
+Start Date : 2017.12.19 Tursday 
+Fedora :
+	1. 配置jdk ：
+		rpm -qa|grep jdk  -- 查看以安装的jdk
+		yum -y remove java java-1.8.0-openjdk*  -- 卸载jdk 1.8.0 版本的 openjdk
+		www.oracle.com  -- download jdk-8u151-liunx-x64.tar.gz
+		tar -zxvf jdk-8u151-liunx-x64.tar.gz  -- Unzip
+
+	配置环境变量 ：
+		export JAVA_HOME=/root/zjy/jdk1.8.0_101
+		export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+		export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH:$HOME/bin
