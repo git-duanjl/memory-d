@@ -1,0 +1,25 @@
+   Date : 2017-12-23 Sunday
+
+ GitHub ：
+   	  userName : git-duanjl
+          passWork : admin@1988
+             email : 1025470552 @qq.com
+            status : free and pulic
+
+ 生成ssh key :	
+	默认文件夹地址 ： ~/.ssh/id_rsa.pub (.ssh 是隐藏文件家 查看方法 ls -ah)
+	生成ssh key 前查看.ssh下是否已经存在
+	没有执行命令生成 : ssh-keygen -t rsa -C "1025470552@qq.com" (生成过程提示一次输入文件地址，两次创建密码，可选择直接跳过)
+	复制id_rsa.pub 里的内容添加到github 上
+
+ 测试ssh key是否成功命令 : 
+	ssh -T git@github.com
+
+ 创建仓库 : 
+	去github上创建，记录ssh地址 (当然你可以不是用github)
+	
+ 克隆仓库到本地命令 : 
+	git clone git@github.com:git-duanjl/memory-d.git 
+		
+	
+
