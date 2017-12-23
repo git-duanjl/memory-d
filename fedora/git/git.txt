@@ -1,25 +1,29 @@
-   Date : 2017-12-23 Sunday
+ Date : 2017-12-23 Sunday
 
- GitHub ：
-   	  userName : git-duanjl
-          passWork : admin@1988
-             email : 1025470552 @qq.com
-            status : free and pulic
+ git 安装 :
+
+ 注册github ： 
+	
 
  生成ssh key :	
 	默认文件夹地址 ： ~/.ssh/id_rsa.pub (.ssh 是隐藏文件家 查看方法 ls -ah)
 	生成ssh key 前查看.ssh下是否已经存在
 	没有执行命令生成 : ssh-keygen -t rsa -C "1025470552@qq.com" (生成过程提示一次输入文件地址，两次创建密码，可选择直接跳过)
 	复制id_rsa.pub 里的内容添加到github 上
+ 
+ 查看ssh 是否启动 systemctl status ssh 如果没有 启动ssh systemctl start ssh
 
  测试ssh key是否成功命令 : 
-	ssh -T git@github.com
+	ssh -T git@github.com 失败 执行 git add
 
- 创建仓库 : 
+ github上创建仓库 : 
 	去github上创建，记录ssh地址 (当然你可以不是用github)
 	
  克隆仓库到本地命令 : 
 	git clone git@github.com:git-duanjl/memory-d.git 
-		
-	
+ 
+ 需要添加的文件推送到gitbub上:
+	git add a.txt //添加到本地缓存
+	git commit -m "从缓存中添加到本地仓库"
+	git push origin master		
 
