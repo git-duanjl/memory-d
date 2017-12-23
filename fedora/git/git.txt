@@ -20,7 +20,11 @@
 	去github上创建，记录ssh地址 (当然你可以不是用github)
 	
  克隆仓库到本地命令 : 
-	git clone git@github.com:git-duanjl/memory-d.git 
+	git clone git@github.com:git-duanjl/memory-d.git
+
+ 查看仓库连接 :
+	git remote -v
+ 
  
  需要添加的文件推送到gitbub上:
 	git add a.txt //添加到本地缓存

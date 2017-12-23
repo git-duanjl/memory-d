@@ -1,36 +1,30 @@
 Start Date : 2017.12.19 Tursday 
-	3. 配置mysql
-		1. 使用MySQL Yum库 -- https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
-			1.1 mysql yum资源库下载地址 ： http://dev.mysql.com/downloads/repo/yum/
-			1.2 sudo rpm -Uvh platform-and-version-specific-package-name.rpm -- Yum安装
-			1.3 yum repolist all | grep mysql -- 查看mysql 资源库 服务状态
-			1.4 启动禁用服务
-				sudo yum-config-manager --disable mysql57-community
-				sudo yum-config-manager --enable mysql56-community
-			1.5 /etc/yum.repos.d/mysql-community.repo -- 发布子库
-			1.6 sudo yum install mysql-community-server -- install mysql
-			1.7 start
-					sudo service mysqld start
-					sudo systemctl start mysqld.
-			1.8 status
-					sudo service mysqld status
-					sudo systemctl status mysqld.service
-			1.9 password log
-					sudo grep 'temporary password' /var/log/mysqld.log
-			2.0 login 
-					mysql -uroot -p
-			2.1 set password
-					ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
-			2.2 mysql_secure_installation
-					允许您执行重要的操作，如设置root密码，删除匿名用户等等。总是运行它来保护你的MySQL 5.6安装
-			2.3 yum --disablerepo=\* --enablerepo='mysql*-community*' list available
-					列出可用于您的平台的所有MySQL组件的包
-			2.4 sudo yum install package-name
-					安装 package-name 软件包
-			2.5 sudo yum update mysql-server -- 升级mysql及其组建
-			2.6 sudo yum update mysql-server -- 列出MySQL组件的所有已安装软件包
-			2.7 sudo yum update package-name -- 更新软件包
-		2.1 数据备份
-			 FLUSH TABLES tbl_list WITH READ LOCK;  -- 通过复制表文件进行备份 ※ 通过复制表文件进行备份
-			 SELECT * INTO OUTFILE 'file_name' FROM tbl_name --  此方法适用于任何类型的数据文件，但仅保存表数据，而不保存表结构
-			 REPAIR TABLE或myisamchk -r --此方法适用于任何类型的数据文件，但仅保存表数据，而不保存表结构
+
+mysql 官网 ：https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
+
+	1. 下载mysql yum 资源库 ：http://dev.mysql.com/downloads/repo/yum/
+	2. yum资源库安装 ： mysql rpm -Uvh platform-and-version-specific-package-name.rpm 
+	3. 查看mysql资源库 ：yum repolist all | grep mysql 
+	4. 启动和禁用mysql服务 :
+		 sudo yum-config-manager --disable mysql57-community
+                 sudo yum-config-manager --enable mysql56-community
+       *5. 安装mysql ： sudo yum install mysql-community-server
+	6. 启动 ：sudo systemctl start mysqld.service
+	7. 查看服务状态 : sudo systemctl status mysqld.service
+	8. 查看密码 :  sudo grep 'temporary password' /var/log/mysqld.log
+	9. 用查到的密码登陆 : mysql -u root -p 回车以后 输入查看到的密码
+	10. 密码修改 ，ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
+	    Your password does not satisfy the current policy requirements 
+	    这个提示的意思是说，你的密码不符合规定，密码规则如下，默认是1
+
+		Policy	Tests Performed
+		0 or LOW	Length
+		1 or MEDIUM	Length; numeric, lowercase/uppercase, and special characters
+		2 or STRONG	Length; numeric, lowercase/uppercase, and special characters; dictionary file	
+	    但是现在我只要0的规则，请输入如下命令，set global validate_password_policy=0;
+            这个时候我就想要一个4位的密码，输入如下命令， set global validate_password_length=1;
+	    这里介绍以下validate_passwod_policy.（自己翻译一下吧）
+			select @@validate_password_length;
+			select @@validate_password_mixed_case_count;
+
+
