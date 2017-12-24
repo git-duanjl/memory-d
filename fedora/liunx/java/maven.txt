@@ -1,0 +1,31 @@
+	Date : 2017-12-24 Sunday
+
+	Eclipse 在fedora 下配置maven : 
+	
+	下载maven liunx 版本 : http://maven.apache.org/download.cgi
+
+	配置 maven 目录下 conf -- settings.xml
+	       新曾一行:<localRepository>本地仓库地址(~/m2/repository)</localRepository>	
+	       配置 国内镜像 :
+			<mirror>
+                            <id>alimaven</id>
+			    <mirrorOf>central</mirrorOf>
+                            <name>aliyun maven</name>
+                            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+                        </mirror>
+	配置eclipse :
+		windows->preferences->maven->installations->add
+		windows->preferences->maven->User setting
+		
+		设置 Global Settings 和 User Settings : 
+		修改成 settings.xml 
+                点击 Update Settings
+		
+		Local Repository (From mergen user and global settings) : 
+		修改成 本地仓库地址.
+		
+
+
+
+
+	
