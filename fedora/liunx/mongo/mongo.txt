@@ -2,6 +2,10 @@ Date : 2017-12-29 Firday
 
 Mongo url : https://docs.mongodb.com/?_ga=2.52429039.634072051.1514540326-647926044.1514540326
 
+Download : Binary -- legacy
+unzip : tar -zxvf mongo64-bit legacy x64
+setting -- path : at ~/.bashrc : export PATH=<mongodb-install-directory>/bin:$PATH
+source ~/.bashrc
 
 
 
