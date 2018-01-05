@@ -1,11 +1,104 @@
 Date : 2017-12-29 Firday
 
-Mongo url : https://docs.mongodb.com/?_ga=2.52429039.634072051.1514540326-647926044.1514540326
+1，安装
 
-Download : Binary -- legacy
-unzip : tar -zxvf mongo64-bit legacy x64
-setting -- path : at ~/.bashrc : export PATH=<mongodb-install-directory>/bin:$PATH
-source ~/.bashrc
+    官网 : https://docs.mongodb.com/?_ga=2.52429039.634072051.1514540326-647926044.1514540326
+    配置网址 ：http://docs.mongodb.org/manual/reference/configuration-options/
+    
+    下载版本 ：Binary -- legacy
+	unzip : tar -zxvf mongo64-bit legacy x64
+	setting -- path : at ~/.bashrc : export PATH=<mongodb-install-directory>/bin:$PATH
+	source ~/.bashrc
+2，配置
+	--logpath   
+	--logappend
+    --dbpath
+	--fork 后台启动
+	--bind_ip
+	--port
+	--auth 开机启动
+3, 启动
+	3.1 启动服务
+		mongod -dbpath=home/djl/mongo/data/db -logpath=/home/djl/mongo/data/log/mongo.log
+
+
+
+
+
+
+	链接 :
+	[djl@localhost ~]$ mongo
+	MongoDB shell version v3.6.1
+	connecting to: mongodb://127.0.0.1:27017
+	MongoDB server version: 3.6.1
+	Server has startup warnings:
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten]
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten]
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+	2018-01-03T19:33:18.350+0800 I CONTROL  [initandlisten]
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten]
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten]
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+	2018-01-03T19:33:18.351+0800 I CONTROL  [initandlisten]
+
+	 创建数据库
+		 > use person
+		 switched to db person
+
+		 > db.person.insert({"name":"苑超"})
+		 WriteResult({ "nInserted" : 1 })
+
+		 > show dbs
+		 admin   0.000GB
+		 local   0.000GB
+		 person  0.000GB
+
+	insert ：
+		> db.person.insert({"name":"1"})
+		WriteResult({ "nInserted" : 1 })
+
+	find ： 
+		> db.person.find()
+		{ "_id" : ObjectId("5a4cccca783115e5aef150a2"), "name" : "1" }
+
+	update : 
+		> db.person.update({"name":"1"},{"name":"2"})
+		WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+	remove : 
+		> db.person.remove({"name":"2"})
+		WriteResult({ "nRemoved" : 1 })
+
+
+
+ 删除数据库
+
+		> show dbs
+		admin   0.000GB
+		local   0.000GB
+		person  0.000GB
+
+		> use person
+		switched to db person
+
+		> db.dropDatabase()
+		{ "dropped" : "person", "ok" : 1 }
+
+		> show dbs
+		admin   0.000GB
+		config  0.000GB
+		local   0.000GB
+
 
 
 

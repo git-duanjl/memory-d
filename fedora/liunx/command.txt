@@ -1,16 +1,21 @@
-ip route : 查看ip
-vi /etc/sysconfig/network-scripts/ifcfg-enp2s0 -- 配置静态地址
+查看ip  -- ip route
+配置静态地址  -- vi /etc/sysconfig/network-scripts/ifcfg-enp2s0 
+查看 sshd 服务状态 -- systemctl status sshd 
+启动 sshd 服务 -- systemctl start sshd
+执行配置文件 -- source fileName
+开机启动 -- systemctl enable ****
+查看MySQL Yum存储库中的所有子存储库 -- yum repolist all | grep mysql
+禁用 -- hell> sudo yum-config-manager --disable mysql57-community 
+启用 -- shell> sudo yum-config-manager --enable mysql56-community 
+监听端口号 -- netstat -tlnp 
+内核版本 --  uname --r
+操作系统32/64 -- uname --m
 
-systemctl status sshd -- 查看 sshd 服务状态
-systemctl start sshd -- 启动 sshd 服务
+***************************** 当你vi卡死时 按一下ctrl+Q
 
-source 
 
-systemctl enable **** -- 开机启动
 
-yum repolist all | grep mysql -- 查看MySQL Yum存储库中的所有子存储库
 
-shell> sudo yum-config-manager --disable mysql57-community 禁用
-shell> sudo yum-config-manager --enable mysql56-community  启用
+
 
 
