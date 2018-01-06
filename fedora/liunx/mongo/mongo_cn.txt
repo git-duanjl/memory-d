@@ -1,0 +1,36 @@
+MongoDB 3.6
+	1.Introduction (简介)
+		MongoDB is an open-source(开源) document database that provides(提供) high performance(高性能)、high availability(高可用)、and automatic(自动) scaling(扩展).
+
+		1.1 Document Database
+			A record(记录) in MongoDB is a document,which is a data structure(数据结构) composed of(由) field(字段) and value pairs(组成).MongoDB documents are similar(类似) to JSON objects.The values of fields may(可能) include(包含) other docments,arrays,and arrays of documents.
+
+			The advantages(优势) of using documents are:
+				. Documents (i.e. objects) correspond(符合) to native data types in many programming(编程) lanuages.
+				. Emdedded(嵌入式) documents and arrays reduce(减少) need for expensive(昂贵的) joins.
+				. Dynamic schema supports fluent polymorphism.(动态模式支持流畅的多态性。)
+			                                                                  
+		1.2 Key Features
+
+			High Performance : 
+				MongoDB provides high performance data persistence.In particular.
+					. Support for embedded data models reduces I/O activity on database system.
+					. Indexes(索引) support faster queries and can include keys from enmbedded documents and arrays.
+
+			Rich(丰富) Query Language : 
+				MongoDB supports a rich query language to support read and write operations(操作)(CRUD)as well as :
+					. Date Aggregation.(聚合)
+					. Text Search and Geospatial(地理空间) Queries.
+
+			High Availability ：
+				MongoDB's replication(复制) facility(设备),called(被称为) replica set,peovides:
+					. automatic failover and
+					. data redundancy.(冗余)
+				A replica set is a group of MongoDB servers that maintain(维护) the same(相同) data set, providing redundancy and increasing(增加) data availability.
+
+			Horizontal Scalability
+				MongoDb provides horizontal(水平) scalability as part of its core functionality(功能):
+					. Sharding distributes(分配) data across a cluster(群，组) of machines(机器).
+
+
+	

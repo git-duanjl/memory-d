@@ -10,3 +10,15 @@ Fedora :
 		export JAVA_HOME=/root/zjy/jdk1.8.0_101
 		export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 		export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH:$HOME/bin
+
+
+
+  .sh
+   #!/bin/sh
+
+	export JAVA_HOME=/usr/local/jdk
+	export JRE_HOME=/usr/local/jdk/jre
+	export PATH=$JAVA_HOME/bin:$JAVA_HOME/JRE/bin:$PATH
+	export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+
+	nohup java -jar /iop/developer/open-platform-developer.jar >> /iop/developer/log &

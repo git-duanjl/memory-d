@@ -1,15 +1,35 @@
 Date : 2017-12-29 Firday
 
-1，安装
+1.安装
 
     官网 : https://docs.mongodb.com/?_ga=2.52429039.634072051.1514540326-647926044.1514540326
-    配置网址 ：http://docs.mongodb.org/manual/reference/configuration-options/
+   
     
     下载版本 ：Binary -- legacy
 	unzip : tar -zxvf mongo64-bit legacy x64
 	setting -- path : at ~/.bashrc : export PATH=<mongodb-install-directory>/bin:$PATH
 	source ~/.bashrc
-2，配置
+2. 配置
+ 	
+ 	配置网址 ：http://docs.mongodb.org/manual/reference/configuration-options/
+
+ 	支持yaml ----------------------------------------------------
+ 	systemLog:
+	   destination: file
+	   path: /home/djl/mongo/data/log/mongod.log
+	   logAppend: true
+	storage:
+	   dbPath: /home/djl/mongo/data/db
+	   journal:
+	      enabled: true
+	processManagement:
+	   fork: true
+	   pidFilePath: /home/djl/mongo/data/mongod.pid
+	net:
+	   port: 28017
+	   bindIp: 127.0.0.1,10.3.1.222
+
+	命令配置------------------------------------------------------
 	--logpath   
 	--logappend
     --dbpath
@@ -17,9 +37,19 @@ Date : 2017-12-29 Firday
 	--bind_ip
 	--port
 	--auth 开机启动
-3, 启动
-	3.1 启动服务
+
+3. 启动
+	3.1 手动启动服务
 		mongod -dbpath=home/djl/mongo/data/db -logpath=/home/djl/mongo/data/log/mongo.log
+	3.2 配置启动
+		mongod -f mongo.cf
+
+3. 
+
+
+
+
+
 
 
 
