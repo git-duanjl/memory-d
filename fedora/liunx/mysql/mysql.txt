@@ -27,4 +27,18 @@ mysql 官网 ：https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
 			select @@validate_password_length;
 			select @@validate_password_mixed_case_count;
 
+	11. show databases;
+	12. create database test;
+	13. drop database test;
+	14. use test;
+	15. show tables;
+	16. create table person(name varchar(255));
+        17. drop table person;
+	
 
+	远程访问（windows 访问 liunx mysql）
+	1.查看数据结构， use mysql -- select Host,User from user;
+	
+	2. 授权 ： grant all privileges on *.* to root@'%'by 'root';
+
+https://www.cnblogs.com/zczc1996/p/6270521.html
