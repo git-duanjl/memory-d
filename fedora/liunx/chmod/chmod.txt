@@ -1,0 +1,39 @@
+Date : 2018-1-7 Sunday
+
+chmod 授权
+
+u 表示该档案的拥有者
+g 表示与该档案的拥有者属于同一个群体者
+o 表示其他以外的人
+a 表示这三者皆是
+
++ 表示增加权限
+- 表示取消权限
+= 表示唯一设定权限
+
+r 可读
+w 可写
+x 可执行
+
+-v 显示权限变更的详细资料
+-R 目前目录下的所有档案和子目录
+
+Example (对于f.sh 设置权限)
+
+1. chmod a+x f.sh / chmod ugo+x f.sh 所有人皆可读取。
+2. chmod -R a+r* 将当前目录下的的文档和子目录设置为人人可读。
+
+数字表示权限
+r=4, w=2, x=1
+rwx = 7
+rw = 2
+rx = 5
+wx = 3
+
+Example
+chmod 777 f.sh
+
+Chomd Explain
+-rwx(主的rwx)rwx(组的rwx)rwx(其他rwx) 
+
+

@@ -1,0 +1,27 @@
+Date : 2018-01-07 Sunday
+
+Annotation :
+	@SpringBootApplication : 是一个方便的注解，增加了一下所有内容：
+		1. @configuration : 将该类标记为应用程序上下文的bean的来源。
+		2. @EnableAutoConfiguration :告诉spring boot 开始添加基于类路径设置，其它bean和各种属性设置的bean。
+		3. @EnableWebMvc : 通常情况下，你会添加一个spring mvc应用程序，但是spring boot 会在类路径中看到Spring-webmvc时自动添加它。这将该应用程序标记为web应用程序，并激活关键行为，ru设置dispatcherServlet。
+		4. ComponentScan : 
+
+
+	
+@Controller : Controller控制器负责处理DispatcherServlet(分发器)分发的请求，它把用户请求的数据经过业务处理之后封装成一个Model，然后把该Model返回给对应的view进行展示。
+	url：https://www.cnblogs.com/xiepeixing/p/4243288.html
+	
+	@Responsebody : 需要把所有的请求参数作为json解析，因此，不能包含key=value的写法在url中，所有的请求参数都是一个json,返回结果不会被解析为跳转路径，而是直接写入HTTP response body中。	
+	
+	@ReuqestMapping : 处理请求地址映射的注解。
+	
+	Request : 接受客户端浏览器的数据
+	Response : 服务端发送到客户端浏览器
+
+	@PathVaribale : 获取url中的数据
+	@RequestParam : 获取请求参数的值
+	
+	@Autowired : 依赖注入，类成员注入，但Spring现在鼓励用构造函数来作注入。
+
+	

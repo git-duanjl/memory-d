@@ -1,0 +1,22 @@
+2017.12.2
+	操作系统 ：
+	   http://cn.jide.com
+	   http://www.phoenixos.com
+	   https://www.neverware.com
+	   https://www.deepin.com/
+
+
+2017.12.07
+	如何学习 ： http://daily.zhihu.com/story/9657589
+
+
+2017.12.13 : 
+	思维导图-Java :	http://mp.weixin.qq.com/s?__biz=MzIyMjQ0MTU0NA==&mid=2247484869&idx=1&sn=336675342cb5ebf9cb186d6b6a367c61&chksm=e82c3ce2df5bb5f41d9c5aa9fe282deb39d30ce362e73b9518a9dd247a73ebe5cd6ef483c696&mpshare=1&scene=1&srcid=1204RML6SqHaEEg8SUaFzG7j#rd 
+
+
+2017.12.13 :
+	java-api : https://docs.oracle.com/javase/8/docs/api/
+
+
+	
+	
