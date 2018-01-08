@@ -44,7 +44,14 @@ Date : 2017-12-29 Firday
 	3.2 配置启动
 		mongod -f mongo.cf
 
-3. 
+4. 错误修复 
+	rm mongo.lock 
+	执行
+	mongod --repair
+
+5. 正确关闭
+	use admin	
+	db.shutdownServer()
 
 
 
