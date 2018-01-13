@@ -1,5 +1,8 @@
 Date : 2018-01-07 Sunday
 
+http://websystique.com/spring-boot/spring-boot-rest-api-example/
+
+
 Annotation :
 	@SpringBootApplication : 是一个方便的注解，增加了一下所有内容：
 		1. @configuration : 将该类标记为应用程序上下文的bean的来源。

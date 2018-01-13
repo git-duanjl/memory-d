@@ -1,0 +1,14 @@
+Date : 2018-01-09 Tuesday
+
+Url : https://my.oschina.net/hosee/blog/639352
+
+HashTable，是一个线程安全的类，使用synchronized来锁住整张Hash表来实现线程安全，每次所著整张表让线程独占。
+
+ConcurrentHashMap， 
+	并发操作：允许多个修改该做并发进行，关键在于使用锁分离技术。
+	锁分离技术：使用多个锁来控制对Hash表的不同部分进行的修改。
+	concurrentHashMap,内部使用段（segment）来表示不同的部分，每个segement是一个小的HashMap,他们有自己的锁。只要多个操作发生在不同的段上，就可以并发进行。
+
+    跨段：有些方法需要跨段，例如size()和containsValue(),他们需要锁住整个表而而不仅仅是某个字段，这就需要按顺序锁定所有段，操作完毕后，按顺序释放所有段的锁。ConcurrentHashMap内部，段数组是final的，并且其他成员实际上也是final的，但是仅仅是将数组声明为final的并不保证数组成员也是final，这需要实现上保证。这样就不会出现死锁现象。
+
+描述，ConurrentHashMap,内部分成多个段，每个段是一个数组，没是数组有一把锁，当操作一个段的时候，其他段还可以进行并发操作。
