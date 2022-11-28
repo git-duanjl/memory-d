@@ -1,33 +1,89 @@
  Date : 2017-12-23 Sunday
 
- git 安装 :
+ windows github 使用教程：
+ 一、 git 安装：
 
- 注册github ： 
+ 二、 github 注册：
+
+ 三、 git 简单命令：
 	
+	3.1 生成SSH Key ： 
+		默认文件夹地址： ~/.ssh/id_rsa.pub (.ssh 是隐藏文件家 查看方法 ls -ah)
+		生成ssh key 前查看.ssh下是否已经存在
+		没有执行命令生成 : ssh-keygen -t rsa -C "1025470552@qq.com" (生成过程提示一次输入文件地址，两次创建密码，可选择直接跳过)
+		复制id_rsa.pub 里的内容添加到github 上
 
- 生成ssh key :	
-	默认文件夹地址 ： ~/.ssh/id_rsa.pub (.ssh 是隐藏文件家 查看方法 ls -ah)
-	生成ssh key 前查看.ssh下是否已经存在
-	没有执行命令生成 : ssh-keygen -t rsa -C "1025470552@qq.com" (生成过程提示一次输入文件地址，两次创建密码，可选择直接跳过)
-	复制id_rsa.pub 里的内容添加到github 上
- 
- 查看ssh 是否启动 systemctl status ssh 如果没有 启动ssh systemctl start ssh
+	3.2 查看ssh 是否启动 ： systemctl status ssh 如果没有 ，启动 ：ssh systemctl start ssh
 
- 测试ssh key是否成功命令 : 
-	ssh -T git@github.com 失败 执行 git add
+	3.3 测试ssh key是否成功命令 : ssh -T git@github.com 失败 执行 git add
 
- github上创建仓库 : 
-	去github上创建，记录ssh地址 (当然你可以不是用github)
+	3.4 github上创建仓库 : 去github上创建，记录ssh地址 (当然你可以不是用github)
+
+	3.5 克隆仓库到本地命令 : git clone git@github.com:git-duanjl/memory-d.git
+
+	3.6 查看仓库连接 : git remote -v
+
+	3.7 需要添加的文件推送到gitbub上:
+		git add a.txt //添加到本地缓存
+		git commit -m "从缓存中添加到本地仓库"
+		git push origin master	
+
+MAC gitbub 使用教程：
+
+ 一、 git 安装：
+
+ 二、 github 注册：
+
+ 三、 git 简单名称
 	
- 克隆仓库到本地命令 : 
-	git clone git@github.com:git-duanjl/memory-d.git
+	3.1 查看SSH Keys 是否存在：
+	    $ ls -al ~/.ssh
+		# .       ..      id_rsa      id_rsa.pub    （如果已存在，则结果会列出目录文件列表，则进入3.3 。）
+		# ls: /Users/hony/.ssh: No such file or director （如果不存在，则结果如下，则进入第3.2 。）
 
- 查看仓库连接 :
-	git remote -v
- 
- 
- 需要添加的文件推送到gitbub上:
-	git add a.txt //添加到本地缓存
-	git commit -m "从缓存中添加到本地仓库"
-	git push origin master		
+	3.2 生成SSH Keys
+
+		在终端中输入以下命令，其中邮箱填写你的邮箱地址
+		$ ssh-keygen -t rsa -b 4096 -C "*your_email@example.com*"
+		# Generating public/private rsa key pair.
+
+		在接下来的步骤中，按回车键:
+		Enter file in which to save the key (/Users/hony/.ssh/id_rsa):
+
+		再次回车：
+		Enter passphrase (empty for no passphrase):
+		Enter same passphrase again:
+
+		结果看到这个图形，就可以了：
+		+---[RSA 4096]----+
+		|  o       .      |
+		|.o + o   +       |
+		|o o + o * .      |
+		|.. o.o + =       |
+		|.o.o .+ S        |
+		|  + =+ X .       |
+		|.o oEoO B .      |
+		|o.o o+ B o       |
+		|..o+. + .        |
+		+----[SHA256]-----+
+
+	3.3 添加 SSH key 到 ssh-agent
+
+		确保ssh-agent是可用的
+		$ eval "$(ssh-agent -s)"
+		# Agent pid 2806
+
+		添加SSH key 到 ssh-agent
+		# id_rsa是SSH key对应的文件的名字，如果要使用一个已经存在的key添加到ssh-agent的话，替换id_rsa名字即可
+		$ ssh-add ~/.ssh/id_rsa
+		# Identity added: ...
+
+	3.4 把 SSH key 添加到远程仓库的账号上
+
+		复制 SSH key 到粘贴板
+		$ pbcopy < ~/.ssh/id_rsa.pub
+
+		登录github或bitbucket等远程仓库添加SSH key即可
+
+
 
